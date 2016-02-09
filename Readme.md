@@ -127,9 +127,10 @@ Note: see https://github.com/thomseddon/node-oauth2-server/tree/master/examples/
  - *boolean* **allowed**
      - Indicates whether the grantType is allowed for this clientId
 
-#### saveAccessToken (accessToken, clientId, expires, user, callback)
+#### saveAccessToken (accessToken, client, expires, user, callback)
 - *string* **accessToken**
-- *string* **clientId**
+- *mixed* **client**
+   - Whatever was passed to getClient callback
 - *date* **expires**
 - *object* **user**
 - *function* **callback (error)**
@@ -154,9 +155,10 @@ Note: see https://github.com/thomseddon/node-oauth2-server/tree/master/examples/
          - *string|number* **userId**
              - The userId
 
-#### saveAuthCode (authCode, clientId, expires, user, callback)
+#### saveAuthCode (authCode, client, expires, user, callback)
 - *string* **authCode**
-- *string* **clientId**
+- *mixed* **client**
+   - Whatever was passed to getClient callback
 - *date* **expires**
 - *mixed* **user**
    - Whatever was passed as `user` to the codeGrant function (see example)
@@ -181,9 +183,10 @@ Note: see https://github.com/thomseddon/node-oauth2-server/tree/master/examples/
 
 ### Required for `refresh_token` grant type
 
-#### saveRefreshToken (refreshToken, clientId, expires, user, callback)
+#### saveRefreshToken (refreshToken, client, expires, user, callback)
 - *string* **refreshToken**
-- *string* **clientId**
+- *mixed* **client**
+   - Whatever was passed to getClient callback
 - *date* **expires**
 - *object* **user**
 - *function* **callback (error)**
